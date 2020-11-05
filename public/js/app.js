@@ -26190,7 +26190,7 @@ var render = function() {
         {
           key: "header",
           fn: function() {
-            return [_vm._v(" Liste des formations ")]
+            return [_vm._v(" Liste des formations en cours")]
           },
           proxy: true
         }

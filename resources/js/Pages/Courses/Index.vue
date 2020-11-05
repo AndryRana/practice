@@ -1,6 +1,6 @@
 <template>
   <app-layout>
-    <template #header> Liste des formations </template>
+    <template #header> Liste des formations en cours</template>
     <div class="py-3" v-for="course in this.courseList" v-bind:key="course.id">
       <div class="mx-12 bg-white rounded shadow p-4">
         <div class="text-sm text-gray-500">
