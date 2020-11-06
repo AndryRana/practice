@@ -23,6 +23,7 @@ export default {
             .then(response => {
                 if(response.status === 200) {
                     this.isWatched = !this.isWatched;
+                    eventBus.$emit('toggleProgressBar', response.data);
                 }
             })
             .catch(error => console.log(error));
