@@ -3498,6 +3498,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -3514,7 +3536,7 @@ __webpack_require__.r(__webpack_exports__);
       var hours = Math.floor(timestamps / 3600);
       var minutes = Math.floor(timestamps / 60) - hours * 60;
       var seconds = timestamps % 60;
-      return hours.toString().padStart(2, 0) + ':' + minutes.toString().padStart(2, 0) + ':' + seconds.toString().padStart(2, 0);
+      return hours.toString().padStart(2, 0) + ":" + minutes.toString().padStart(2, 0) + ":" + seconds.toString().padStart(2, 0);
     }
   },
   mounted: function mounted() {
@@ -26453,80 +26475,138 @@ var render = function() {
     },
     [
       _vm._v(" "),
-      _vm._l(this.courseList, function(course) {
-        return _c("div", { key: course.id, staticClass: "py-3" }, [
-          _c("div", { staticClass: "mx-12 bg-white rounded shadow p-4" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "text-sm text-gray-500 flex justify-between items-center"
-              },
-              [
-                _c("div", [
-                  _vm._v("\n          Mise en ligne par "),
-                  _c("strong", [_vm._v(_vm._s(course.user.name))]),
-                  _vm._v(" -\n          ("),
-                  _c("span", { staticClass: "text-gray-500 text-sm" }, [
-                    _vm._v(_vm._s(course.participants) + " participant"),
-                    parseInt(course.participants) > 1
-                      ? _c("span", [_vm._v("s")])
-                      : _vm._e()
-                  ]),
-                  _vm._v(")\n        ")
-                ]),
-                _vm._v(" "),
-                _c("span", { staticClass: "block text-sm text-gray-400" }, [
+      _c("section", { staticClass: "py-6" }, [
+        _c(
+          "div",
+          { staticClass: "max-w-7xl mx-auto sm:px-6 lg:px-8" },
+          [
+            _vm.$page.flash.success
+              ? _c("div", { staticClass: "bg-green-200 text-green-600 p-4" }, [
                   _vm._v(
-                    "\n          " + _vm._s(course.episodes_count) + " épisode"
-                  ),
-                  course.episodes_count > 1
-                    ? _c("span", [_vm._v("s")])
-                    : _vm._e()
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c("h1", { staticClass: "text-3xl" }, [
-              _vm._v(_vm._s(course.title))
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "font-semibold text-gray-500" }, [
-              _vm._v(_vm._s(_vm.convert(course.total_duration)) + " ")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "text-sm text-gray-500" }, [
-              _vm._v(_vm._s(course.description))
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "flex items-center justify-between" }, [
-              _c(
-                "a",
-                {
-                  staticClass:
-                    "bg-indigo-500 text-white px-2 py-1 text-sm mt-3 inline-block rounded hover:bg-indigo-700",
-                  attrs: { href: "course/" + course.id }
-                },
-                [_vm._v("Voir la formation")]
-              ),
-              _vm._v(" "),
-              course.update
-                ? _c(
-                    "a",
-                    {
-                      staticClass:
-                        "bg-gray-500 text-white px-2 py-1 text-sm mt-3 inline-block rounded hover:bg-gray-700",
-                      attrs: { href: "courses/edit/" + course.id }
-                    },
-                    [_vm._v("Modifier la formation")]
+                    "\n        " + _vm._s(_vm.$page.flash.success) + "\n      "
                   )
-                : _vm._e()
-            ])
-          ])
-        ])
-      })
-    ],
-    2
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm._l(_vm.courses.data, function(course) {
+              return _c("div", { key: course.id, staticClass: "py-3" }, [
+                _c(
+                  "div",
+                  { staticClass: "mx-12 bg-white rounded shadow p-4" },
+                  [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "text-sm text-gray-500 flex justify-between items-center"
+                      },
+                      [
+                        _c("div", [
+                          _vm._v("\n              Mise en ligne par "),
+                          _c("strong", [_vm._v(_vm._s(course.user.name))]),
+                          _vm._v(" -\n              ("),
+                          _c("span", { staticClass: "text-gray-500 text-sm" }, [
+                            _vm._v(
+                              _vm._s(course.participants) + " participant"
+                            ),
+                            parseInt(course.participants) > 1
+                              ? _c("span", [_vm._v("s")])
+                              : _vm._e()
+                          ]),
+                          _vm._v(")\n            ")
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "span",
+                          { staticClass: "block text-sm text-gray-400" },
+                          [
+                            _vm._v(
+                              "\n              " +
+                                _vm._s(course.episodes_count) +
+                                " épisode"
+                            ),
+                            course.episodes_count > 1
+                              ? _c("span", [_vm._v("s")])
+                              : _vm._e()
+                          ]
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("h1", { staticClass: "text-3xl" }, [
+                      _vm._v(_vm._s(course.title))
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "font-semibold text-gray-500" }, [
+                      _vm._v(
+                        _vm._s(_vm.convert(course.total_duration)) +
+                          "\n          "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "text-sm text-gray-500" }, [
+                      _vm._v(_vm._s(course.description))
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "flex items-center justify-between" },
+                      [
+                        _c(
+                          "a",
+                          {
+                            staticClass:
+                              "bg-indigo-500 text-white px-2 py-1 text-sm mt-3 inline-block rounded hover:bg-indigo-700",
+                            attrs: { href: "course/" + course.id }
+                          },
+                          [_vm._v("Voir la formation")]
+                        ),
+                        _vm._v(" "),
+                        course.update
+                          ? _c(
+                              "a",
+                              {
+                                staticClass:
+                                  "bg-gray-500 text-white px-2 py-1 text-sm mt-3 inline-block rounded hover:bg-gray-700",
+                                attrs: { href: "courses/edit/" + course.id }
+                              },
+                              [_vm._v("Modifier la formation")]
+                            )
+                          : _vm._e()
+                      ]
+                    )
+                  ]
+                )
+              ])
+            }),
+            _vm._v(" "),
+            _vm._l(_vm.courses.links, function(link) {
+              return _c(
+                "inertia-link",
+                {
+                  key: link.label,
+                  staticClass: "text-indigo-600 border-gray-500 p-5",
+                  attrs: { href: link.url }
+                },
+                [
+                  _c(
+                    "span",
+                    {
+                      class: {
+                        "bg-indigo-900 py-1 px-3 rounded-lg text-white":
+                          link.active
+                      }
+                    },
+                    [_vm._v(_vm._s(link.label))]
+                  )
+                ]
+              )
+            })
+          ],
+          2
+        )
+      ])
+    ]
   )
 }
 var staticRenderFns = []

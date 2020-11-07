@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CourseController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,7 +26,7 @@ Route::group(['auth:sanctum','verified'], function () {
     Route::post('/toggleProgress', 'App\Http\Controllers\CourseController@toggleProgress')->name('courses.toggle');
 
     Route::post('/courses', 'App\Http\Controllers\CourseController@store')->name('courses.store');
-    Route::get('/courses/edit/{id}',  'App\Http\Controllers\CourseController@edit');
+    Route::get('/courses/edit/{id}',  [CourseController::class,'edit']);
     Route::patch('/courses/{id}',  'App\Http\Controllers\CourseController@update');
 
     Route::get('/dashboard', function () {
